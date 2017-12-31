@@ -14,7 +14,7 @@
     ],
     "require": {
         "php": ">=7.1",
-        "endroid/import": "^1.0"
+        "endroid/import": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7|^6.0"
