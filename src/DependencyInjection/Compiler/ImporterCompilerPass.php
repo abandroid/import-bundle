@@ -7,7 +7,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Import\Bundle\ImportBundle\DependencyInjection\Compiler;
+namespace Endroid\ImportBundle\DependencyInjection\Compiler;
 
 use Endroid\Import\Command\ImportCommand;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;

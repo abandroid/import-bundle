@@ -7,9 +7,9 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Import\Bundle\ImportBundle;
+namespace Endroid\ImportBundle;
 
-use Endroid\Import\Bundle\ImportBundle\DependencyInjection\Compiler\ImporterCompilerPass;
+use Endroid\ImportBundle\DependencyInjection\Compiler\ImporterCompilerPass;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;

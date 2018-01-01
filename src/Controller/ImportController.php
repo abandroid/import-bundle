@@ -7,7 +7,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Import\Bundle\ImportBundle\Controller;
+namespace Endroid\ImportBundle\Controller;
 
 use Endroid\Import\Importer\ImporterInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
