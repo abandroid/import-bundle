@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 class ImportController extends Controller
 {
     /**
-     * @Route("/{name}", name="endroid_import")
+     * @Route("/{name}", name="import")
      */
     public function indexAction(string $name): Response
     {
