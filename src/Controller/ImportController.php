@@ -12,16 +12,22 @@ declare(strict_types=1);
 namespace Endroid\ImportBundle\Controller;
 
 use Endroid\Import\Importer\ImporterInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class ImportController extends Controller
+class ImportController
 {
+    private $importers;
+
+    public function __construct(iterable $importers)
+    {
+        $this->importers = $importers;
+    }
+
     /**
      * @Route("/{name}", name="import")
      */
-    public function indexAction(string $name): Response
+    public function __invoke(string $name): Response
     {
         $importer = $this->getImporter($name);
         $importer->import();
@@ -29,8 +35,14 @@ class ImportController extends Controller
         return new Response('Done');
     }
 
-    protected function getImporter($name): ImporterInterface
+    protected function getImporter(string $name): ImporterInterface
     {
-        return $this->get('endroid_import.importer.'.$name);
+        foreach ($this->importers as $importer) {
+            if ($importer->getName() === $name) {
+                return $importer;
+            }
+        }
+
+        return null;
     }
 }
