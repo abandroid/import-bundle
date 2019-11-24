@@ -21,13 +21,18 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('endroid_import');
 
-        $treeBuilder
-            ->root('endroid_import')
-                ->children()
-                    ->integerNode('time_limit')->end()
-                    ->scalarNode('memory_limit')->end()
+        if (method_exists($treeBuilder, 'root')) {
+            $rootNode = $treeBuilder->root('endroid_import');
+        } else {
+            $rootNode = $treeBuilder->getRootNode();
+        }
+
+        $rootNode
+            ->children()
+                ->integerNode('time_limit')->end()
+                ->scalarNode('memory_limit')->end()
             ->end()
         ;
 
