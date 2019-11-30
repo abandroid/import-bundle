@@ -12,8 +12,8 @@ declare(strict_types=1);
 namespace Endroid\ImportBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Processor;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 class EndroidImportExtension extends Extension
 {
